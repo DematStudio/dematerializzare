@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dematerializzare</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #000, #111);
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #0a0a0a;
+    border-bottom: 1px solid #333;
+}
+
+.lang {
+    cursor: pointer;
+    margin-left: 15px;
+    color: #aaa;
+}
+
+.lang:hover {
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero img {
+    width: 140px;
+    border-radius: 50%;
+    border: 2px solid #444;
+}
+
+/* SECTION */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* CARDS */
+.card {
+    background: #111;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #222;
+}
+
+/* LINKS */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* LOGHI */
+.loghi img {
+    width: 80px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.loghi img:hover {
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div><b>DEMATERIALIZZARE</b></div>
+    <div>
+        <span class="lang" onclick="setLang('it')">IT</span>
+        <span class="lang" onclick="setLang('en')">EN</span>
+        <span class="lang" onclick="setLang('ru')">RU</span>
+    </div>
+</header>
+
+<div class="hero">
+    <img src="profile.jpg" alt="Profile">
+    <h1 id="title">Ciao, sono Dematerializzare</h1>
+</div>
+
+<div class="section">
+    <div class="card">
+        <h2 id="bioTitle">Bio</h2>
+        <p id="bioText">
+            Sono fondatore di diversi progetti, con un server Discord in continua crescita.
+            Tra questi: Piacenza Roleplay, un RP serio su Roblox a tema italiano, orientato al full RP.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2 id="skillsTitle">Competenze</h2>
+        <p id="skillsText">
+            Conosco Python, JavaScript, C++, e altri linguaggi.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Piacenza Roleplay</h2>
+        <a href="#">
+            <img src="piacenza.png" width="200">
+        </a>
+        <p id="rpText">
+            Un'esperienza roleplay avanzata su Roblox, ambientata in Italia.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Contatti & Social</h2>
+        <p>Discord: <a href="https://discord.com/users/1319291619446362153" target="_blank">@dematerializzare</a></p>
+        <p>ID: 1319291619446362153</p>
+        <p>Spotify: <a href="https://open.spotify.com/user/313pl3i4sf5rhvpi4gshjmjkxrnu" target="_blank">Profilo</a></p>
+        <p>Twitch: <a href="https://twitch.tv/militare_bianco" target="_blank">militare_bianco</a></p>
+    </div>
+
+    <div class="card loghi">
+        <h2>Link Rapidi</h2>
+        <a href="https://discord.com/users/1319291619446362153"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"></a>
+        <a href="https://twitch.tv/militare_bianco"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
+        <a href="https://open.spotify.com"><img src="https://cdn-icons-png.flaticon.com/512/174/174872.png"></a>
+    </div>
+</div>
+
+<footer>
+    © 2026 Dematerializzare
+</footer>
+
+<script>
+const translations = {
+    it: {
+        title: "Ciao, sono Dematerializzare",
+        bioTitle: "Bio",
+        bioText: "Sono fondatore di diversi progetti, con un server Discord in continua crescita. Tra questi: Piacenza Roleplay, un RP serio su Roblox a tema italiano, orientato al full RP.",
+        skillsTitle: "Competenze",
+        skillsText: "Conosco Python, JavaScript, C++, e altri linguaggi.",
+        rpText: "Un'esperienza roleplay avanzata su Roblox, ambientata in Italia."
+    },
+    en: {
+        title: "Hi, I'm Dematerializzare",
+        bioTitle: "Bio",
+        bioText: "I am the founder of several projects, with a constantly growing Discord server. One of them is Piacenza Roleplay, a serious Italian-themed Roblox RP focused on full roleplay.",
+        skillsTitle: "Skills",
+        skillsText: "I know Python, JavaScript, C++, and more.",
+        rpText: "An advanced roleplay experience on Roblox set in Italy."
+    },
+    ru: {
+        title: "Привет, я Dematerializzare",
+        bioTitle: "Био",
+        bioText: "Я основатель нескольких проектов с постоянно растущим Discord сервером. Один из них — Piacenza Roleplay, серьёзный RP на Roblox в итальянском стиле.",
+        skillsTitle: "Навыки",
+        skillsText: "Я знаю Python, JavaScript, C++ и другие языки.",
+        rpText: "Продвинутый RP проект на Roblox в итальянском стиле."
+    }
+};
+
+function setLang(lang) {
+    document.getElementById("title").innerText = translations[lang].title;
+    document.getElementById("bioTitle").innerText = translations[lang].bioTitle;
+    document.getElementById("bioText").innerText = translations[lang].bioText;
+    document.getElementById("skillsTitle").innerText = translations[lang].skillsTitle;
+    document.getElementById("skillsText").innerText = translations[lang].skillsText;
+    document.getElementById("rpText").innerText = translations[lang].rpText;
+}
+</script>
+
+</body>
+      </html>
